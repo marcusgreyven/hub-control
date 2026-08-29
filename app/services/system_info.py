@@ -1,5 +1,6 @@
 import time
 import psutil
+import socket
 
 def get_memory_available_mb():
     memory = psutil.virtual_memory()
@@ -28,7 +29,7 @@ def get_uptime_seconds():
 
 def get_system_info():
     return {
-        "hostname": psutil.users()[0].name,
+        "hostname": socket.gethostname(),
         "temperature": get_temperature(),
         "cpu_percent": get_cpu_percent(),
         "memory_available_mb": get_memory_available_mb(),
