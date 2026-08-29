@@ -1,9 +1,9 @@
 fetch("/api/system")
-    .then(reponse => reponse.json())
+    .then(response => response.json())
     .then(data => {
-        document.getElemenrById("hostname").textContent = 
+        document.getElementById("hostname").textContent =
             "Hostname: " + data.hostname;
 
-        document.getElemenrById("temperature").textContent = 
-            "Temperature: " + data.temperature;
+        document.getElementById("temperature").textContent =
+            "Temperature: " + data.temperature + " °C";
     });
